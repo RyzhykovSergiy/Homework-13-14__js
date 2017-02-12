@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 09-10__js</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body class="body" id="body">
+
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title"></h4>
+				<div class="btn-close__wrap">
+					<button type="button" class="btn-close">Close</button>
+				</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-box" id="results">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/html" id="item_tmpl">
+		<form method="post"> 
+			<h3>Тест по программированию</h3>
+
+<% for ( var i = 0; i < question.length; i++ )
+	{ %>
+		<section>	
+			<p><%= question[i].title %></p>
+			<input type="radio" id="<%= question[i].id_1 %>" name="<%= question[i].name %>" <%= question[i].value1 %> /><label for="<%= question[i].id_1 %>"><span></span><%= question[i].question1 %></label><br>
+			<input type="radio" id="<%= question[i].id_2 %>" name="<%= question[i].name %>" <%= question[i].value2 %> /><label for="<%= question[i].id_2 %>"><span></span><%= question[i].question2 %></label><br>
+			<input type="radio" id="<%= question[i].id_3 %>" name="<%= question[i].name %>" <%= question[i].value3 %> /><label for="<%= question[i].id_3 %>"><span></span><%= question[i].question3 %></label>
+		</section>
+	<% }
+%>
+			<div class="btn-wrap">
+				<button class="inspection">Проверить мои результаты</button>
+			</div>
+		</form>
+	</script>
+
+	<script src="js/template.js"></script>	
+	<script src="js/script.js"></script>	
+</body>
+</html>
